@@ -41,6 +41,7 @@ class ServicioTest {
 
     @Test
     void testTodosFiltro() {
+
         Flux<String> source = servicio.buscarTodosFiltro();
         Flux<String> error = source.concatWith(
                 Mono.error(new IllegalArgumentException("Mensaje de Error"))
