@@ -47,7 +47,7 @@ class ServicioTest {
                 Mono.error(new IllegalArgumentException("Mensaje de Error"))
         );
         StepVerifier
-                .create(source)
+                .create(error)
                 .expectNextCount(4)
                 .expectErrorMatches(throwable -> throwable instanceof IllegalArgumentException &&
                         throwable.getMessage().equals("Mensaje de Error")
